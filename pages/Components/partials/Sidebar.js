@@ -5,13 +5,13 @@ const Sidebar = () => {
         <>
             <div className="sidebar bg-danger" data-color="white" data-active-color="danger">
                 <div className="logo">
-                    <a href="https://www.creative-tim.com" className="simple-text logo-mini">
+                    <a href="" className="simple-text logo-mini">
                         <div className="logo-image-small">
                             <img src="/main/assets/img/chatgpt.png" />
                         </div>
                         <p>CT</p>
                     </a>
-                    <a href="https://www.creative-tim.com" className="simple-text logo-normal">
+                    <a href="" className="simple-text logo-normal">
                         Chat GPT
                         {/* <div className="logo-image-big">
                             <img src="/main/assets/img/logo-big.png" />
@@ -21,7 +21,7 @@ const Sidebar = () => {
                 <div className="sidebar-wrapper">
                     <ul className="nav">
                         <li className="active">
-                            <Link href="/dashboard">
+                            <Link href="/">
                                 <i className="nc-icon nc-bank"></i>
                                 <p>Dashboard</p>
                             </Link>
