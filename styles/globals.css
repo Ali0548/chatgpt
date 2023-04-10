@@ -1,0 +1,361 @@
+.checkers {
+    color: red;
+}
+
+.loader,
+.loader:after {
+    border-radius: 50%;
+    width: 10em;
+    height: 10em;
+}
+
+.loader {
+    margin: 10px auto;
+    font-size: 5px;
+    position: relative;
+    text-indent: -9999em;
+    border-top: 1.1em solid rgba(255, 255, 255, 0.2);
+    border-right: 1.1em solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1.1em solid rgba(255, 255, 255, 0.2);
+    border-left: 1.1em solid #34B5B8;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation: load8 1.1s infinite linear;
+    animation: load8 1.1s infinite linear;
+}
+
+@-webkit-keyframes load8 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes load8 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+:root {
+    --hue: 223;
+    --bg: hsl(var(--hue), 90%, 90%);
+    --fg: hsl(var(--hue), 90%, 10%);
+    --primary: hsl(var(--hue), 90%, 50%);
+    --trans-dur: 0.3s;
+    font-size: calc(16px + (32 - 16) * (100vw - 320px) / (2560 - 320));
+}
+
+.bike {
+    display: block;
+    margin: auto;
+    width: 16em;
+    height: auto;
+}
+
+.bike__body,
+.bike__front,
+.bike__handlebars,
+.bike__pedals,
+.bike__pedals-spin,
+.bike__seat,
+.bike__spokes,
+.bike__spokes-spin,
+.bike__tire {
+    animation: bikeBody 3s ease-in-out infinite;
+    stroke: var(--primary);
+    transition: stroke var(--trans-dur);
+}
+
+.bike__front {
+    animation-name: bikeFront;
+}
+
+.bike__handlebars {
+    animation-name: bikeHandlebars;
+}
+
+.bike__pedals {
+    animation-name: bikePedals;
+}
+
+.bike__pedals-spin {
+    animation-name: bikePedalsSpin;
+}
+
+.bike__seat {
+    animation-name: bikeSeat;
+}
+
+.bike__spokes,
+.bike__tire {
+    stroke: currentColor;
+}
+
+.bike__spokes {
+    animation-name: bikeSpokes;
+}
+
+.bike__spokes-spin {
+    animation-name: bikeSpokesSpin;
+}
+
+.bike__tire {
+    animation-name: bikeTire;
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: hsl(var(--hue), 90%, 10%);
+        --fg: hsl(var(--hue), 90%, 90%);
+    }
+}
+
+/* Animations */
+@keyframes bikeBody {
+    from {
+        stroke-dashoffset: 79;
+    }
+
+    33%,
+    67% {
+        stroke-dashoffset: 0;
+    }
+
+    to {
+        stroke-dashoffset: -79;
+    }
+}
+
+@keyframes bikeFront {
+    from {
+        stroke-dashoffset: 19;
+    }
+
+    33%,
+    67% {
+        stroke-dashoffset: 0;
+    }
+
+    to {
+        stroke-dashoffset: -19;
+    }
+}
+
+@keyframes bikeHandlebars {
+    from {
+        stroke-dashoffset: 10;
+    }
+
+    33%,
+    67% {
+        stroke-dashoffset: 0;
+    }
+
+    to {
+        stroke-dashoffset: -10;
+    }
+}
+
+@keyframes bikePedals {
+    from {
+        animation-timing-function: ease-in;
+        stroke-dashoffset: -25.133;
+    }
+
+    33%,
+    67% {
+        animation-timing-function: ease-out;
+        stroke-dashoffset: -21.991;
+    }
+
+    to {
+        stroke-dashoffset: -25.133;
+    }
+}
+
+@keyframes bikePedalsSpin {
+    from {
+        transform: rotate(0.1875turn);
+    }
+
+    to {
+        transform: rotate(3.1875turn);
+    }
+}
+
+@keyframes bikeSeat {
+    from {
+        stroke-dashoffset: 5;
+    }
+
+    33%,
+    67% {
+        stroke-dashoffset: 0;
+    }
+
+    to {
+        stroke-dashoffset: -5;
+    }
+}
+
+@keyframes bikeSpokes {
+    from {
+        animation-timing-function: ease-in;
+        stroke-dashoffset: -31.416;
+    }
+
+    33%,
+    67% {
+        animation-timing-function: ease-out;
+        stroke-dashoffset: -23.562;
+    }
+
+    to {
+        stroke-dashoffset: -31.416;
+    }
+}
+
+@keyframes bikeSpokesSpin {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(3turn);
+    }
+}
+
+@keyframes bikeTire {
+    from {
+        animation-timing-function: ease-in;
+        stroke-dashoffset: 56.549;
+        transform: rotate(0);
+    }
+
+    33% {
+        stroke-dashoffset: 0;
+        transform: rotate(0.33turn);
+    }
+
+    67% {
+        animation-timing-function: ease-out;
+        stroke-dashoffset: 0;
+        transform: rotate(0.67turn);
+    }
+
+    to {
+        stroke-dashoffset: -56.549;
+        transform: rotate(1turn);
+    }
+}
+
+.customLoader {
+
+    font-size: 40px;
+    text-indent: -9999em;
+    overflow: hidden;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    margin: 10px auto;
+    position: relative;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+    animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+}
+
+@-webkit-keyframes load6 {
+    0% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+
+    5%,
+    95% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+
+    10%,
+    59% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+    }
+
+    20% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+    }
+
+    38% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+    }
+
+    100% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+}
+
+@keyframes load6 {
+    0% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+
+    5%,
+    95% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+
+    10%,
+    59% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+    }
+
+    20% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+    }
+
+    38% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+    }
+
+    100% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+}
+
+@-webkit-keyframes round {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes round {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}

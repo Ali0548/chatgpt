@@ -1,0 +1,10 @@
+.customClass{
+    background-color: #000;
+    color: #c24545;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px;
+}
