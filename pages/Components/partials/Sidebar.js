@@ -10,12 +10,12 @@ const Sidebar = () => {
                 <div className="logo">
                     <a href="" className="simple-text logo-mini">
                         <div className="logo-image-small">
-                            <img src="/main/assets/img/chatgpt.png" />
+                            <img src="/main/assets/img/cybercell.png" />
                         </div>
                         <p>CT</p>
                     </a>
                     <a href="" className="simple-text logo-normal">
-                        Chat GPT
+                     Cyber Bot
                         {/* <div className="logo-image-big">
                             <img src="/main/assets/img/logo-big.png" />
                         </div> */}

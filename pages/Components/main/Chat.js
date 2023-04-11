@@ -9,16 +9,14 @@ const Dashboard = () => {
     return (
         <>
             <Header />
-            <div className="wrapper ">
+         
+                   
                 <Sidebar />
                 <div className="main-panel">
-                 
-                    <Navbar />
-                  
                      <Chatting />
                 </div>
-            </div >
-           
+         
+    
             <Custom />
         </>
     )

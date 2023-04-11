@@ -94,23 +94,28 @@ const Chatting = () => {
     });
     return `${time}, ${today}`;
   };
-
+  const scrollDown = () => {
+    const chatHistory = document.querySelector('.chat-history');
+     chatHistory.scrollTop = chatHistory.scrollHeight;
+  }
   const sendMessage = async () => {
+   
     if (inProgress) {
       alert('Please wait for the previous request to complete')
     } else {
-      if (message.length < 5) {
+      if (message.length < 2) {
         alert("Please enter a valid message");
       } else {
+       
         // Send the message logic here
         setMessage('');
         emmetMessage(message);
-
-
+        scrollDown()
         try {
           setInProgress(true);
           messageLoaderf.current.style.display = 'block';
           typingOrNOt.current.innerHTML = 'Typing...';
+          scrollDown();
           const response = await fetch('https://chatgpt.merlinwms.co.uk/askedQuestion', {
             method: 'POST',
             headers: {
@@ -124,11 +129,13 @@ const Chatting = () => {
           let res = verifyAnswer(data.answer);
           emmetBotMessage(res);
           setInProgress(false);
+          scrollDown();
         } catch (error) {
           setInProgress(false);
           messageLoaderf.current.style.display = 'none';
           typingOrNOt.current.innerHTML = 'Online';
           emmetBotMessage(error.message);
+          scrollDown();
         }
       }
     }
@@ -143,8 +150,8 @@ const Chatting = () => {
     emmetMesage.current.innerHTML = '';
   }
   return (
-    <div style={{ height: '90vh' }} className="content">
-      <div className="container my-3">
+    <div  className="content">
+      <div className="container">
         <div className="row clearfix">
           <div className="col-lg-12">
             <Link href="/" className='btn btn-warning'>Generate Desription</Link>
@@ -157,7 +164,7 @@ const Chatting = () => {
                         <img src="/main/assets/img/chatgpt.png" alt="avatar" />
                       </a>
                       <div className="chat-about">
-                        <h6 className="m-b-0">Chat GPT</h6>
+                        <h6 className="m-b-0"> Cyber Bot</h6>
                         <strong> <span className='text-success' ref={typingOrNOt}>Online</span></strong>
                       </div>
                     </div>
@@ -167,7 +174,7 @@ const Chatting = () => {
                     </div>
                   </div>
                 </div>
-                <div style={{ minHeight: '500px', maxHeight: '500px', overflowY: 'auto' }} className="chat-history">
+                <div  className="chat-history">
                   <ul className="m-b-0">
                     <div ref={emmetMesage}></div>
                     <li ref={messageLoaderf} style={{ display: 'none' }} className="clearfix">

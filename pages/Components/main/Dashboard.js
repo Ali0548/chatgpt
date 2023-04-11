@@ -16,7 +16,6 @@ const Dashboard = () => {
                      <Generator />
                 </div>
             </div >
-            <Footer />
             <Custom />
         </>
     )

@@ -13,7 +13,7 @@ const Navbar = () => {
                                 <span className="navbar-toggler-bar bar3"></span>
                             </button>
                         </div>
-                        <a className="navbar-brand" href="javascript:;">CHAT GPT</a>
+                        <a className="navbar-brand">TheCyberBot</a>
                     </div>
                     {/* <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-bar navbar-kebab"></span>
