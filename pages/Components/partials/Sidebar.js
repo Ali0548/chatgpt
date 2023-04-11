@@ -23,8 +23,8 @@ const Sidebar = () => {
                 </div>
                 <div className="sidebar-wrapper">
                     <ul className="nav">
-                    <li className={router.pathname===`/`?'active':''}>
-                            <Link href="/">
+                    <li className={router.pathname===`/Components/main/Dashboard`?'active':''}>
+                            <Link href="/Components/main/Dashboard">
                                 <i className="nc-icon nc-bank"></i>
                                 <p>Keywords</p>
                             </Link>
