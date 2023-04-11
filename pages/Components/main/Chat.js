@@ -4,7 +4,7 @@ import Sidebar from '../partials/Sidebar';
 import Footer from '../partials/Footer';
 import Navbar from '../partials/Navbar';
 import Custom from '../partials/Custom';
-import Generator from './Generator';
+import Chatting from './Chatting';
 const Dashboard = () => {
     return (
         <>
@@ -12,11 +12,13 @@ const Dashboard = () => {
             <div className="wrapper ">
                 <Sidebar />
                 <div className="main-panel">
+                 
                     <Navbar />
-                     <Generator />
+                  
+                     <Chatting />
                 </div>
             </div >
-            <Footer />
+           
             <Custom />
         </>
     )

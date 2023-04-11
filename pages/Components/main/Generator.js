@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react'
-
+import Link from 'next/link';
 const Generator = () => {
     const [description, setDescription] = useState([]);
     const loaderTheBike = useRef(null);
@@ -8,19 +8,24 @@ const Generator = () => {
         productDescription: '',
         numResults: null
     });
+    
     const onChange = (e) => {
         const { name, value } = e.target;
         setPayload({ ...payload, [name]: value });
         console.log("payload", payload);
     }
     const generateDescription = async (e) => {
-        loaderTheBike.current.style.display = "block";
+        try {
+            loaderTheBike.current.style.display = "block";
         e.target.innerHTML = "Generating...";
         e.target.disabled = true;
         e.preventDefault();
 
         const { productName, productDescription, numResults } = payload;
         if (productName && productDescription && numResults) {
+           if(Number(numResults)<1){
+              alert("Number of results should be greater than 0")
+           } else{
             const result = await fetch('https://chatgpt.merlinwms.co.uk/chat', {
                 method: 'POST',
                 headers: {
@@ -42,12 +47,16 @@ const Generator = () => {
             e.target.innerHTML = "Generate Again";
             e.target.disabled = false;
             setDescription(updatedData);
+           }
         }
         else {
             loaderTheBike.current.style.display = "none";
             e.target.innerHTML = "Start";
             e.target.disabled = false;
             alert("Please fill all the fields");
+        }
+        } catch (error) {
+            alert(error.message)
         }
     }
 
@@ -63,7 +72,7 @@ const Generator = () => {
                 e.target.innerHTML = "Copy Text"
             }, 1000);
         }, (err) => {
-            console.error('Async: Could not copy text: ', err);
+            alert('Could not copy text, Try Again')
         });
     }
     return (
@@ -75,6 +84,7 @@ const Generator = () => {
                         <div className="card card-user">
                             <div className="card-header">
                                 <h5 className="card-title">Generate Description</h5>
+                            <Link href="/Components/main/Chat" className='btn btn-warning d-flex float-right'>Start Chat</Link>
                             </div>
                             <div className="card-body">
                                 <form>
@@ -87,7 +97,7 @@ const Generator = () => {
                                         </div>
                                         <div className="col-md-5">
                                             <div className="form-group">
-                                                <label><strong>Description</strong></label>
+                                                <label><strong>Add Keywords</strong></label>
                                                 <input type="text" onChange={onChange} name='productDescription' defaultValue={payload.productDescription} className="form-control" placeholder="" />
                                             </div>
                                         </div>

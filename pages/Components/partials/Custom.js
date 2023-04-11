@@ -10,12 +10,11 @@ const Custom = () => {
             {/* <Script src="/main/assets/js/plugins/perfect-scrollbar.jquery.min.js"></Script> */}
 
             <Script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></Script>
+            <Script src="/main/assets/js/plugins/bootstrap-notify.js"></Script>
 
             <Script src="/main/assets/js/plugins/chartjs.min.js"></Script>
 
-            <Script src="/main/assets/js/plugins/bootstrap-notify.js"></Script>
 
-            <Script src="/main/assets/demo/demo.js"></Script>
 
         </>
     )

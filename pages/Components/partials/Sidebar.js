@@ -1,6 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 const Sidebar = () => {
+    const router = useRouter();
+    console.log(router.pathname)
     return (
         <>
             <div className="sidebar bg-danger" data-color="white" data-active-color="danger">
@@ -20,18 +23,18 @@ const Sidebar = () => {
                 </div>
                 <div className="sidebar-wrapper">
                     <ul className="nav">
-                        <li className="active">
+                    <li className={router.pathname===`/`?'active':''}>
                             <Link href="/">
                                 <i className="nc-icon nc-bank"></i>
-                                <p>Dashboard</p>
+                                <p>Keywords</p>
                             </Link>
                         </li>
-                        {/* <li>
-                            <Link href="/about">
+                        <li className={router.pathname===`/Components/main/Chat`?'active':''}>
+                            <Link href="/Components/main/Chat">
                                 <i className="nc-icon nc-diamond"></i>
-                                <p>Old Response</p>
+                                <p>Chat</p>
                             </Link>
-                        </li> */}
+                        </li>
                         {/* <li>
                             <Link href="/logout">
                                 <i className="nc-icon nc-pin-3"></i>

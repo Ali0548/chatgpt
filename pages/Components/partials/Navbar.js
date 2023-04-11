@@ -3,7 +3,7 @@ import React from 'react'
 const Navbar = () => {
     return (
         <>
-            <nav className="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
+            <nav className="navbar navbar navbar-absolute fixed-top navbar-transparent">
                 <div className="container-fluid">
                     <div className="navbar-wrapper">
                         <div className="navbar-toggle">
@@ -13,15 +13,16 @@ const Navbar = () => {
                                 <span className="navbar-toggler-bar bar3"></span>
                             </button>
                         </div>
-                        <a className="navbar-brand" href="javascript:;">Paper Dashboard 2</a>
+                        <a className="navbar-brand" href="javascript:;">CHAT GPT</a>
                     </div>
-                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                    {/* <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-bar navbar-kebab"></span>
                         <span className="navbar-toggler-bar navbar-kebab"></span>
                         <span className="navbar-toggler-bar navbar-kebab"></span>
-                    </button>
+                    </button> */}
                     <div className="collapse navbar-collapse justify-content-end" id="navigation">
-                        <form>
+                      <strong>Hello, Guest</strong>
+                        {/* <form>
                             <div className="input-group no-border">
                                 <input type="text" value="" className="form-control" placeholder="Search..." />
                                 <div className="input-group-append">
@@ -49,7 +50,7 @@ const Navbar = () => {
                                     </p>
                                 </a>
                             </li>
-                        </ul>
+                        </ul> */}
                     </div>
                 </div>
             </nav>
