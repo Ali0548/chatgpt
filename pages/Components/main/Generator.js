@@ -16,16 +16,17 @@ const Generator = () => {
     }
     const generateDescription = async (e) => {
         try {
-            loaderTheBike.current.style.display = "block";
-        e.target.innerHTML = "Generating...";
-        e.target.disabled = true;
+           
         e.preventDefault();
 
         const { productName, productDescription, numResults } = payload;
         if (productName && productDescription && numResults) {
            if(Number(numResults)<1){
-              alert("Number of results should be greater than 0")
+              alert("Number of results should be greater than 0");
            } else{
+            loaderTheBike.current.style.display = "block";
+            e.target.innerHTML = "Generating...";
+            e.target.disabled = true;
             const result = await fetch('https://chatgpt.merlinwms.co.uk/chat', {
                 method: 'POST',
                 headers: {
