@@ -85,6 +85,7 @@ const Generator = () => {
                         <div className="card card-user">
                             <div className="card-header">
                                 <h5 className="card-title">Generate Description</h5>
+                            <Link href="https://cyberchat.merlinwms.co.uk/" className='btn btn-warning d-flex float-right'>Start Chat <small className='text-danger'><strong>New</strong></small></Link>
                             <Link href="/Components/main/Chat" className='btn btn-warning d-flex float-right'>Start Chat</Link>
                             </div>
                             <div className="card-body">

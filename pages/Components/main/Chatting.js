@@ -154,6 +154,7 @@ const Chatting = () => {
       <div className="container">
         <div className="row clearfix">
           <div className="col-lg-12">
+            <Link href="https://cyberchat.merlinwms.co.uk/" className='btn btn-warning'>Chat  <small className='text-danger'><strong>New</strong></small></Link>
             <Link href="/" className='btn btn-warning'>Generate Desription</Link>
             <div className="card chat-app">
               <div className="chat">
