@@ -29,6 +29,12 @@ const Sidebar = () => {
                                 <p>Keywords</p>
                             </Link>
                         </li>
+                        <li className={router.pathname===`https://cyberchat.merlinwms.co.uk/`?'active':''}>
+                            <Link href="https://cyberchat.merlinwms.co.uk/">
+                                <i className="nc-icon nc-single-02"></i>
+                                <p>Chat  <small className='text-danger'><strong>New</strong></small></p>
+                            </Link>
+                        </li>
                         <li className={router.pathname===`/Components/main/Chat`?'active':''}>
                             <Link href="/Components/main/Chat">
                                 <i className="nc-icon nc-diamond"></i>
